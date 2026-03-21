@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace BlazingPizza
@@ -18,6 +19,6 @@ namespace BlazingPizza
 
         public decimal GetTotalPrice() => Pizzas.Sum(p => p.GetTotalPrice());
 
-        public string GetFormattedTotalPrice() => GetTotalPrice().ToString("0.00");
+        public string GetFormattedTotalPrice() => $"COP {GetTotalPrice().ToString("N0", CultureInfo.GetCultureInfo("es-CO"))}";
     }
 }
